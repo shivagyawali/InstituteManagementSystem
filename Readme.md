@@ -1,4 +1,4 @@
-# How build this application
+# How we build this application
 
 - npm init -y
 - npm i --save-dev prisma typescript ts-node @types/node nodemon
