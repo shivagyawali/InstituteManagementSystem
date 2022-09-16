@@ -10,7 +10,111 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id Int @id @default(autoincrement())
-  name String
+model UserLogin {
+  id         String     @id @default(uuid())
+  username   String
+  password   String
+  last_login DateTime   @default(now())
+  created_at DateTime   @default(now())
+  institute  Institute?
+  role       Role?      @relation(fields: [roleId], references: [id])
+  roleId     String?
+}
+
+model Role {
+  id         String      @id @default(uuid())
+  name       String      @unique
+  created_at DateTime    @default(now())
+  UserLogin  UserLogin[]
+}
+
+model Institute {
+  id          String    @id @default(uuid())
+  name        String
+  address     String
+  phone       String
+  pan         String
+  created_at  DateTime  @default(now())
+  userLogin   UserLogin @relation(fields: [userLoginId], references: [id])
+  userLoginId String    @unique
+  Course      Course[]
+  Teacher     Teacher[]
+  Staff       Staff[]
+  Student     Student[]
+}
+
+model Course {
+  id          String    @id @default(uuid())
+  name        String
+  fee         String?
+  status      String    @default("active")
+  created_at  DateTime  @default(now())
+  institute   Institute @relation(fields: [instituteId], references: [id])
+  instituteId String
+  teachers    Teacher[]
+  students    Student[]
+}
+
+model Teacher {
+  id            String    @id @default(uuid())
+  name          String
+  gender        String
+  phone         String
+  address       String
+  salary        String
+  qualification String
+  email         String?
+  photo         String?
+  nagrita       String?
+  dob           DateTime
+  created_at    DateTime  @default(now())
+  institute     Institute @relation(fields: [instituteId], references: [id])
+  instituteId   String
+  courses       Course[]
+}
+
+model Staff {
+  id            String    @id @default(uuid())
+  name          String
+  gender        String
+  phone         String
+  address       String
+  salary        String?
+  qualification String?
+  email         String?
+  photo         String?
+  nagrita       String?
+  dob           DateTime
+  created_at    DateTime  @default(now())
+  institute     Institute @relation(fields: [instituteId], references: [id])
+  instituteId   String
+}
+
+model Student {
+  id            String    @id @default(uuid())
+  name          String
+  gender        String
+  phone         String
+  address       String
+  batch         String
+  qualification String?
+  email         String?
+  photo         String?
+  nagrita       String?
+  dob           DateTime
+  created_at    DateTime  @default(now())
+  institute     Institute @relation(fields: [instituteId], references: [id])
+  instituteId   String
+  fees          Fee[]
+  courses       Course[]
+}
+
+model Fee {
+  id         String   @id @default(uuid())
+  phase      String
+  amount     String
+  status     String
+  created_at DateTime @default(now())
+  student    Student? @relation(fields: [studentId], references: [id])
+  studentId  String?
 }

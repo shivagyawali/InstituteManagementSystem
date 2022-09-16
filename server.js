@@ -1,27 +1,48 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
+const fileUpload = require("express-fileupload")
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
 //check if the database is connected
 prisma
   .$connect()
   .then((response) => {
-    console.log("Connected to the database!");
+    console.log("Connected to the mysql database..!");
   })
   .catch((error) => {
     console.error("Failed to connect to the database.", error);
   });
 
+app.use("/api/v1/auth", require("./routes/authRoute"));
+app.use("/api/v1/role", require("./routes/roleRoute"));
+app.use("/api/v1/institute", require("./routes/instituteRoute"));
+app.use("/api/v1/course", require("./routes/courseRoute"));
+app.use("/api/v1/teacher", require("./routes/teacherRoute"));
+app.use("/api/v1/staff", require("./routes/staffRoute"));
+app.use("/api/v1/student", require("./routes/studentRoute"));
+
 //routes CRUD OPERATION
 app.get("/", async (req, res) => {
-  await prisma.user
-    .findMany()
+  await prisma.userLogin
+    .findMany({
+      include: {
+        role: true,
+      },
+    })
     .then((users) => {
       res.json(users);
     })
@@ -29,11 +50,11 @@ app.get("/", async (req, res) => {
       console.log(err);
     });
 });
-app.get("/user/:id", async (req, res) => {
+app.get("/role/:id", async (req, res) => {
   const { id } = req.params;
-  await prisma.user
+  await prisma.role
     .findFirst({
-      where: { id: Number(id) },
+      where: { id: String(id) },
     })
     .then((user) => {
       res.json(user);
@@ -43,9 +64,9 @@ app.get("/user/:id", async (req, res) => {
     });
 });
 
-app.post("/user", async (req, res) => {
+app.post("/role", async (req, res) => {
   const { name } = req.body;
-  const user = await prisma.user.create({
+  const user = await prisma.role.create({
     data: {
       name,
     },
@@ -72,5 +93,5 @@ app.delete("/user/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`http://localhost:${port}`);
 });
