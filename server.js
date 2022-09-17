@@ -34,6 +34,8 @@ app.use("/api/v1/course", require("./routes/courseRoute"));
 app.use("/api/v1/teacher", require("./routes/teacherRoute"));
 app.use("/api/v1/staff", require("./routes/staffRoute"));
 app.use("/api/v1/student", require("./routes/studentRoute"));
+app.use("/api/v1/discount", require("./routes/discountRoute"));
+app.use("/api/v1/fee", require("./routes/feeRoute"));
 
 //routes CRUD OPERATION
 app.get("/", async (req, res) => {

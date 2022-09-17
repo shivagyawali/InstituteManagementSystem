@@ -19,7 +19,8 @@ const authCtrl = {
           console.log(err);
         });
     } catch (err) {
-     return res.status(500).json({ msg: err });
+      console.log(err);
+      return res.status(500).json({ msg: "Something went wrong" });
     }
   },
 
@@ -51,10 +52,11 @@ const authCtrl = {
         },
       });
       res.json({
-        msg: "Account successfully registered!",
+        msg: `${newUser.username} is successfully registered!`,
       });
     } catch (err) {
-      return res.status(500).json({ msg: err });
+       console.log(err);
+       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
   login: async (req, res) => {
@@ -88,7 +90,8 @@ const authCtrl = {
         });
       }
     } catch (err) {
-     return res.status(500).json({ msg: err });
+      console.log(err);
+     return res.status(500).json({ msg: "Something went wrong" });
     }
   },
   logout: async (req, res) => {
@@ -98,7 +101,8 @@ const authCtrl = {
         .status(200)
         .json({ message: "Successfully logged out 😏 🍀" });
     } catch (err) {
-     return res.status(500).json({ msg: err });
+     console.log(err);
+     return res.status(500).json({ msg: "Something went wrong" });
     }
   },
 };

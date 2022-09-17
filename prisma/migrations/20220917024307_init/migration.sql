@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Fee` MODIFY `phase` VARCHAR(191) NULL,
+    MODIFY `status` VARCHAR(191) NULL;

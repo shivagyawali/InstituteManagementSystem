@@ -8,6 +8,7 @@ const studentCtrl = {
         where: { instituteId: req.user.institute.id },
         include: {
           courses: true,
+          fees: true,
         },
       });
 

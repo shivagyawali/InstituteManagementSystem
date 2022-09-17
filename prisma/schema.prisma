@@ -110,11 +110,21 @@ model Student {
 }
 
 model Fee {
-  id         String   @id @default(uuid())
-  phase      String
+  id         String    @id @default(uuid())
+  phase      String?
   amount     String
-  status     String
-  created_at DateTime @default(now())
-  student    Student? @relation(fields: [studentId], references: [id])
+  status     String?
+  created_at DateTime  @default(now())
+  student    Student?  @relation(fields: [studentId], references: [id])
   studentId  String?
+  discount   Discount? @relation(fields: [discountId], references: [id])
+  discountId String?
+}
+
+model Discount {
+  id            String   @id @default(uuid())
+  discount_type String
+  percent       String
+  created_at    DateTime @default(now())
+  fee           Fee[]
 }

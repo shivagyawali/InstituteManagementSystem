@@ -19,7 +19,8 @@ const roleCtrl = {
 
       res.json(course);
     } catch (err) {
-      return res.status(500).json({ msg: err });
+       console.log(err);
+       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
   course: async (req, res) => {
@@ -30,7 +31,8 @@ const roleCtrl = {
       });
       res.json(course);
     } catch (err) {
-      return res.status(500).json({ msg: err.meta.cause });
+       console.log(err);
+       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
 
@@ -55,7 +57,8 @@ const roleCtrl = {
       });
       res.json(newData);
     } catch (err) {
-      return res.status(500).json({ msg: err });
+      console.log(err);
+      return res.status(500).json({ msg: "Something went wrong" });
     }
   },
   update: async (req, res) => {
@@ -76,7 +79,8 @@ const roleCtrl = {
       });
       res.json(updatedRole);
     } catch (err) {
-      return res.status(500).json({ msg: err });
+       console.log(err);
+       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
   delete: async (req, res) => {
@@ -89,7 +93,8 @@ const roleCtrl = {
         msg:`${course.name} is deleted !!`
       });
     } catch (err) {
-      return res.status(500).json({ msg: err });
+       console.log(err);
+       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
 };
