@@ -10,7 +10,7 @@ const Login = () => {
     return (
         <div >
             <div className='fixed top-0 left-0 -z-10 bg-primary w-1/2 h-screen rounded-tr-3xl rounded-br-3xl'></div>
-            <div className='flex w-2/3 items-center justify-center m-auto mt-28 bg-white rounded-3xl overflow-hidden'>
+            <div className='flex w-2/3 items-center justify-center m-auto mt-28 bg-white rounded-3xl overflow-hidden shadow-lg shadow-gray-600'>
                 <div className='w-1/2 flex flex-col items-center'>
                 <div className='pb-10'>
                     <p className='text-3xl font-bold'>Welcome to IMS</p>

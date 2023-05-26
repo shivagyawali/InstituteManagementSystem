@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         cyan: colors.cyan,
         "primary": "#FFC629",
-        "dark": "#edb621",
+        "dark": "#ce9700",
       },
       fontFamily: {
         body: ["Poppins"],

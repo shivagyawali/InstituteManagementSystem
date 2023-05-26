@@ -3,3 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.sidebar-link{
+    @apply font-semibold hover:bg-dark cursor-pointer py-3 px-3 rounded-md ;
+}
+    
