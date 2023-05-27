@@ -5,23 +5,23 @@ const Teachers = () => {
     return (
         <div>
             <Sidebar />
-            <div className='flex items-center justify-center mt-20 lg:pl-24'>
-                <form className='flex flex-col gap-8 text-lg font-medium w-1/3 ' >
-                    <div className='flex flex-col gap-2'>
-                        <label htmlFor="photo">Photo: </label>
-                        <input id='photo' type='file' className='cursor-pointer font-normal text-md text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none' />
-                    </div>
-                    <div className='flex justify-between gap-10'>
+            <div className='flex flex-col items-center justify-center p-12 '>
+                <p className='text-3xl mb-20 text-white bg-dark p-2 rounded-md '>Teacher's Information</p>
+                <form className='flex flex-col gap-8 text-lg font-medium  ' >
+                    <div className='flex lg:flex-row flex-col justify-between gap-10'>
+                        <div className='flex flex-col gap-2'>
+                            <label htmlFor="photo">Photo: </label>
+                            <input id='photo' type='file' className='cursor-pointer w-48 font-normal text-sm text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none' />
+                        </div>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="name">NAME: </label>
                             <input id='name' type='text' className='input-section font-normal text-md text-gray-900' />
                         </div>
                         <div className='flex flex-col gap-2 '>
-                            <label htmlFor="address">Address: </label>
-                            <input id='address' type='text' className='input-section font-normal text-md text-gray-900' />
+                            <label htmlFor="phonenumber">Phone Number: </label>
+                            <input id='phonenumber' type='number' className='input-section font-normal text-md text-gray-900' />
                         </div>
                     </div>
-
                     <div className='flex justify-between gap-10'>
                         <div className='flex flex-col gap-4 '>
                             <label>Gender:</label>
@@ -44,37 +44,34 @@ const Teachers = () => {
                             <label htmlFor="dob">Date of Birth: </label>
                             <input id='dob' type='date' className='input-section font-normal text-md text-gray-900' />
                         </div>
-                    </div>
-                    <div className='flex justify-between gap-10'>
-                        <div className='flex flex-col gap-2 '>
-                            <label htmlFor="phonenumber">Phone Number: </label>
-                            <input id='phonenumber' type='number' className='input-section font-normal text-md text-gray-900' />
-                        </div>
-                        <div className='flex flex-col gap-2 '>
-                            <label htmlFor="email">Email: </label>
-                            <input name='email' type='email' className='input-section font-normal text-md text-gray-900' />
-                        </div>
-                    </div>
-                    <div className='flex justify-between gap-10'>
-                        <div className='flex flex-col gap-2 '>
-                            <label htmlFor="courses">Courses: </label>
-                            <input id='courses' type='text' className='input-section font-normal text-md text-gray-900' />
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor="salary">Salary: </label>
-                            <input id='salary' type='number' className='input-section font-normal text-md text-gray-900' />
-                        </div>
-                    </div>
-                    <div className='flex justify-between gap-10'>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="identity">Citizenship No.: </label>
                             <input id='identity' type='number' className='input-section font-normal text-md text-gray-900' />
+                        </div>
+                    </div>
+                    <div className='flex justify-between gap-10'>
+
+                        <div className='flex flex-col gap-2 '>
+                            <label htmlFor="email">Email: </label>
+                            <input id='email' type='email' className='input-section font-normal text-md text-gray-900' />
                         </div>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="qualification">Qualifications: </label>
                             <input id='qualification' type='text' className='input-section font-normal text-md text-gray-900' />
                         </div>
+                        <div className='flex flex-col gap-2 '>
+                            <label htmlFor="courses">Courses: </label>
+                            <input id='courses' type='text' className='input-section font-normal text-md text-gray-900' />
+                        </div>
                     </div>
+                    <div className='flex justify-between gap-10'>
+                       
+                        <div className='flex flex-col gap-2'>
+                            <label htmlFor="salary">Salary: </label>
+                            <input id='salary' type='number' className='input-section font-normal text-md text-gray-900' />
+                        </div>
+                    </div>
+
 
                     <button type='submit' className='bg-primary py-2 rounded-md hover:bg-dark' >Save</button>
 
