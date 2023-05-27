@@ -6,6 +6,19 @@
 
 
 .sidebar-link{
-    @apply font-semibold hover:bg-dark cursor-pointer py-3 px-3 rounded-md ;
+    @apply font-semibold hover:bg-dark cursor-pointer py-3 px-3 rounded-md focus:bg-dark ;
+}
+.input-section{
+ @apply border-2 border-primary focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary rounded-md ;
 }
     
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea{
+    resize: none;
+    min-height: 250px;
+}

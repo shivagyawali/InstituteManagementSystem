@@ -1,10 +1,12 @@
 import React from 'react'
-import Sidebar from '../../components/layouts/Sidebar'
+import Sidebar from '../../components/Sidebar'
+
 
 const Dashboard = () => {
   return (
-    <div>
-        <Sidebar/>
+    <div className='flex gap-10'>
+      <Sidebar />
+        
     </div>
   )
 }
