@@ -1,16 +1,16 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 
-const Teachers = () => {
+const Students = () => {
     return (
         <div>
             <Sidebar />
             <div className='flex items-center justify-center mt-20 lg:pl-24'>
                 <form className='flex flex-col gap-8 text-lg font-medium w-1/3 ' >
-                    <div className='flex flex-col gap-2'>
-                        <label htmlFor="photo">Photo: </label>
-                        <input id='photo' type='file' className='cursor-pointer font-normal text-md text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none' />
-                    </div>
+                        <div className='flex flex-col gap-2'>
+                            <label htmlFor="photo">Photo: </label>
+                            <input id='photo' type='file' className='cursor-pointer font-normal text-md text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none' />
+                        </div>
                     <div className='flex justify-between gap-10'>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="name">NAME: </label>
@@ -61,8 +61,8 @@ const Teachers = () => {
                             <input id='courses' type='text' className='input-section font-normal text-md text-gray-900' />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <label htmlFor="salary">Salary: </label>
-                            <input id='salary' type='number' className='input-section font-normal text-md text-gray-900' />
+                            <label htmlFor="batch">Batch: </label>
+                            <input id='batch' type='number' className='input-section font-normal text-md text-gray-900' />
                         </div>
                     </div>
                     <div className='flex justify-between gap-10'>
@@ -84,4 +84,4 @@ const Teachers = () => {
     )
 }
 
-export default Teachers
+export default Students
