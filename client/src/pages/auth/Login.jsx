@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/dashboard");
+    navigate("/");
   };
   return (
     <div>
@@ -20,11 +20,13 @@ const Login = () => {
               onSubmit={handleSubmit}
             >
               <input
+              // required
                 type="email"
                 placeholder="Enter Your Email"
                 className="w-full border border-primary rounded-lg text-sm focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary"
               />
               <input
+                // required
                 type="password"
                 placeholder="Enter Your Password"
                 className="w-full border border-primary rounded-lg text-sm focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary"
@@ -41,9 +43,6 @@ const Login = () => {
             <img src={LoginImg} alt="" />
           </div>
         </div>
-      </div>
-      <div className="w-1/2 bg-primary">
-        <img src={LoginImg} alt="" />
       </div>
     </div>
   );
