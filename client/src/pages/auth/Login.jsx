@@ -10,10 +10,10 @@ const Login = () => {
     <div>
       <div>
         <div className="fixed top-0 left-0 -z-10 bg-primary w-1/2 h-screen rounded-tr-3xl rounded-br-3xl"></div>
-        <div className="md:flex md:w-2/3 w-2/3 items-center justify-center m-auto mt-28 bg-white rounded-3xl overflow-hidden shadow-lg shadow-gray-600">
+        <div className="md:flex w-2/3 items-center justify-center m-auto mt-28 bg-white rounded-3xl overflow-hidden shadow-lg shadow-gray-600">
           <div className="md:w-1/2 w-2-3 flex flex-col items-center">
             <div className="p-5">
-              <p className="lg:text-3xl mg:text-xl text-lg font-bold pt-10 md:pt-0">Welcome to IMS</p>
+              <p className="lg:text-3xl md:text-xl text-lg font-bold pt-10 md:pt-0">Welcome to IMS</p>
             </div>
             <form
               className="w-full flex flex-col px-10 py-10 gap-8 items-center "

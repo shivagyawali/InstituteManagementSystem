@@ -13,14 +13,14 @@ const Sidebar = () => {
 
 
   return (
-    <div className='fixed top-0'>
-      <div className={`p-2 text-xl bg-primary rounded-md cursor-pointer mx-1 my-2 md:hidden  ${minimize ? 'hidden' : 'inline-block'}`} onClick={() => (setMinimize(true))}>
+    <div className='fixed top-0 z-20'>
+      <div className={`p-2 text-xl font-bold bg-primary rounded-md cursor-pointer mx-1 my-2 md:hidden hover:bg-dark ${minimize ? 'hidden' : 'block'}`} onClick={() => (setMinimize(true))}>
         <AiOutlineMenu />
       </div>
-      <div className={`bg-primary h-screen w-52 flex flex-col p-4 md:block ${minimize ? 'block' : 'hidden'} `}>
-        <div className="text-3xl font-bold px-4 pt-6 pb-12 flex items-center justify-between ">
+      <div className={`bg-primary h-screen lg:w-52 w-34 flex flex-col p-4 md:block ${minimize ? 'block' : 'hidden'} `}>
+        <div className="text-3xl font-bold px-4 pt-6 pb-12 flex items-center gap-10 ">
           <p >IMS</p>
-          <GrFormClose onClick={() => (setMinimize(false))} className="md:hidden" />
+          <GrFormClose onClick={() => (setMinimize(false))} className="md:hidden hover:bg-dark rounded-md cursor-pointer" />
         </div>
         <ul className="flex flex-col gap-2 w-full  ">
           <Link to={'/institute'} >

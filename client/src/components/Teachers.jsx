@@ -5,13 +5,13 @@ const Teachers = () => {
     return (
         <div>
             <Sidebar />
-            <div className='flex flex-col items-center justify-center p-12'>
-                <p className='lg:text-3xl md:text-2xl sm:text:xl text-lg mb-20 bg-primary p-3 rounded-md'
+            <div className='flex flex-col md:items-center justify-center'>
+                <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky md:relative top-0  md:top-3  bg-primary p-3 md:rounded-md text-center'
                 >
                     Teacher's Information
                 </p>
-                <form className='flex flex-col gap-10 text-lg font-medium w-screen px-10 md:w-2/4 md:px-0' >
-                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
+                <form className='flex flex-col gap-10 text-lg font-medium w-full lg:w-2/4 md:w-2/5 md:px-0 p-12 ' >
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10'>
                         <div className='flex flex-col gap-2'>
                             <label
                                 htmlFor="photo"
@@ -49,7 +49,7 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full '>
+                    <div className='flex lg:flex-row flex-col justify-between gap-10 '>
                         <div className='flex flex-col gap-4 '>
                             <label>Gender:</label>
                             <div className='flex gap-3'>
