@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogout, AiOutlineMenu } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { FaSchool, FaUserGraduate, FaUserTie, FaReadme } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
@@ -9,17 +9,50 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [menuPop, setMenuPop] = useState(false);
+  const [minimize, setMinimize] = useState(false);
+
 
   return (
-    <div className="fixed top-0">
-      <div className="bg-primary h-screen w-52 flex flex-col p-4 ">
-        <p className="text-3xl font-bold px-4 py-12">IMS</p>
+    <div className='fixed top-0'>
+      <div className={`p-2 text-xl bg-primary rounded-md cursor-pointer mx-1 my-2 md:hidden  ${minimize ? 'hidden' : 'inline-block'}`} onClick={() => (setMinimize(true))}>
+        <AiOutlineMenu />
+      </div>
+      <div className={`bg-primary h-screen w-52 flex flex-col p-4 md:block ${minimize ? 'block' : 'hidden'} `}>
+        <div className="text-3xl font-bold px-4 pt-6 pb-12 flex items-center justify-between ">
+          <p >IMS</p>
+          <GrFormClose onClick={() => (setMinimize(false))} className="md:hidden" />
+        </div>
         <ul className="flex flex-col gap-2 w-full  ">
-          <Link to={'/institute'} ><li className={`sidebar-link flex items-center gap-2`}><FaSchool className="text-3xl" />Institute</li></Link>
-          <Link to={'/course'}><li className="sidebar-link flex items-center gap-2"><FaReadme className="text-3xl" />Course</li></Link>
-          <Link to={'/teachers'}><li className="sidebar-link flex items-center gap-2"><GiTeacher className="text-3xl" />Teachers</li></Link>
-          <Link to={'/students'}><li className="sidebar-link flex items-center gap-2"><FaUserGraduate className="text-3xl" />Students</li></Link>
-          <Link to={'/staffs'}><li className="sidebar-link flex items-center gap-2"><FaUserTie className="text-3xl" />Staffs</li></Link>
+          <Link to={'/institute'} >
+            <li className={`sidebar-link flex items-center gap-2`}>
+              <FaSchool className="text-3xl" />
+              Institute
+            </li>
+          </Link>
+          <Link to={'/course'}>
+            <li className="sidebar-link flex items-center gap-2">
+              <FaReadme className="text-3xl" />
+              Course
+            </li>
+          </Link>
+          <Link to={'/teachers'}>
+            <li className="sidebar-link flex items-center gap-2">
+              <GiTeacher className="text-3xl" />
+              Teachers
+            </li>
+          </Link>
+          <Link to={'/students'}>
+            <li className="sidebar-link flex items-center gap-2">
+              <FaUserGraduate className="text-3xl" />
+              Students
+            </li>
+          </Link>
+          <Link to={'/staffs'}>
+            <li className="sidebar-link flex items-center gap-2">
+              <FaUserTie className="text-3xl" />
+              Staffs
+            </li>
+          </Link>
         </ul>
         <div>
           <div

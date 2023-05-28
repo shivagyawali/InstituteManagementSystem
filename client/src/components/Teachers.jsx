@@ -10,8 +10,8 @@ const Teachers = () => {
                 >
                     Teacher's Information
                 </p>
-                <form className='flex flex-col gap-8 text-lg font-medium' >
-                    <div className='flex lg:flex-row flex-col justify-between gap-10'>
+                <form className='flex flex-col gap-10 text-lg font-medium w-screen px-10 md:w-2/4 md:px-0' >
+                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
                         <div className='flex flex-col gap-2'>
                             <label
                                 htmlFor="photo"
@@ -49,7 +49,7 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex justify-between gap-10'>
+                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full '>
                         <div className='flex flex-col gap-4 '>
                             <label>Gender:</label>
                             <div className='flex gap-3'>
@@ -120,7 +120,7 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex justify-between gap-10'>
+                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
 
                         <div className='flex flex-col gap-2 '>
                             <label
@@ -159,7 +159,7 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex justify-between gap-10'>
+                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
 
                         <div className='flex flex-col gap-2'>
                             <label
