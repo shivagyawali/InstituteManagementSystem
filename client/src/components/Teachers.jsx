@@ -3,16 +3,18 @@ import Sidebar from './Sidebar'
 
 const Teachers = () => {
     return (
-        <div>
-            <Sidebar />
-            <div className='flex flex-col md:items-center justify-center'>
-                <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky md:relative top-0  md:top-3  bg-primary p-3 md:rounded-md text-center'
+        <div className='flex'>
+            <div className='lg:w-1/5'>
+                <Sidebar />
+            </div>
+            <div className='w-full text-center '>
+                <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky lg:relative top-0  lg:top-3  bg-primary p-3 lg:rounded-md text-center lg:inline-block'
                 >
                     Teacher's Information
                 </p>
-                <form className='flex flex-col gap-10 text-lg font-medium w-full lg:w-2/4 md:w-2/5 md:px-0 p-12 ' >
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10'>
-                        <div className='flex flex-col gap-2'>
+                <form className='flex flex-col items-center w-full py-20 text-left gap-10'>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="photo"
                             >
@@ -21,10 +23,10 @@ const Teachers = () => {
                             <input
                                 id='photo'
                                 type='file'
-                                className='cursor-pointer w-48 font-normal text-sm text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none'
+                                className='cursor-pointer font-normal text-sm text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none'
                             />
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="name"
                             >
@@ -33,10 +35,10 @@ const Teachers = () => {
                             <input
                                 id='name'
                                 type='text'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='input-section font-normal text-md text-gray-900 w-full'
                             />
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="phonenumber"
                             >
@@ -45,14 +47,15 @@ const Teachers = () => {
                             <input
                                 id='phonenumber'
                                 type='number'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='input-section font-normal text-md text-gray-900 w-full'
                             />
                         </div>
                     </div>
-                    <div className='flex lg:flex-row flex-col justify-between gap-10 '>
-                        <div className='flex flex-col gap-4 '>
+
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full '>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label>Gender:</label>
-                            <div className='flex gap-3'>
+                            <div className='flex gap-3 w-full'>
                                 <div className='flex items-center gap-2 text-sm'>
                                     <input
                                         id='male'
@@ -95,7 +98,7 @@ const Teachers = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="dob"
                             >
@@ -104,10 +107,10 @@ const Teachers = () => {
                             <input
                                 id='dob'
                                 type='date'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='w-full input-section font-normal text-md text-gray-900'
                             />
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="identity"
                             >
@@ -116,13 +119,13 @@ const Teachers = () => {
                             <input
                                 id='identity'
                                 type='number'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='w-full input-section font-normal text-md text-gray-900'
                             />
                         </div>
                     </div>
-                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
 
-                        <div className='flex flex-col gap-2 '>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="email"
                             >
@@ -134,7 +137,7 @@ const Teachers = () => {
                                 className='input-section font-normal text-md text-gray-900'
                             />
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="qualification"
                             >
@@ -146,7 +149,7 @@ const Teachers = () => {
                                 className='input-section font-normal text-md text-gray-900'
                             />
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="courses"
                             >
@@ -159,9 +162,9 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex lg:flex-row flex-col justify-between gap-10 w-full'>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
 
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="salary"
                             >
@@ -170,21 +173,20 @@ const Teachers = () => {
                             <input
                                 id='salary'
                                 type='number'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='input-section font-normal text-md text-gray-900 w-full'
                             />
                         </div>
                     </div>
 
-
                     <button
                         type='submit'
-                        className='bg-primary py-2 rounded-md hover:bg-dark'
+                        className='bg-primary py-2 px-4 rounded-md hover:bg-dark'
                     >
                         Save
                     </button>
-
                 </form>
             </div>
+
         </div>
     )
 }
