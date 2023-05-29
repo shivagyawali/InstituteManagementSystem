@@ -20,5 +20,5 @@ input::-webkit-inner-spin-button {
 
 textarea{
     resize: none;
-    min-height: 250px;
+    min-height: 180px;
 }

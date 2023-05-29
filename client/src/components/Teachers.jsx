@@ -162,7 +162,7 @@ const Teachers = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
+                    <div className='flex md:flex-row flex-col lg:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
 
                         <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
