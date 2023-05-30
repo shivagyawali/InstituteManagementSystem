@@ -69,7 +69,6 @@ const AddInstitute = () => {
             >
               Save
             </button>
-      
           </div>
         </form>
       </div>

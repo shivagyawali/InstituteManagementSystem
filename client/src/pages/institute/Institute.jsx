@@ -12,16 +12,16 @@ const Institute = () => {
             <div className='w-full text-center'>
                 <Header headerText={`Institute's Information`} />
                 <div className='flex flex-col items-center w-full pt-28 text-left gap-10 ' >
-                    <table className='w-3/6 border-2 border-gray-600 ' >
-                        <tr className='border-2 border-gray-600 text-center '>
-                            <th className='border-2 border-gray-600 w-1/3 p-2 '>Institutes</th>
-                            <th className='border-2 border-gray-600 w-1/3 p-2'>Address</th>
-                            <th className='border-2 border-gray-800 w-1/3 p-2'>Pan/Vat</th>
+                    <table className='w-3/6 border-2 border-primary ' >
+                        <tr className='border-2 border-primary text-center '>
+                            <th className='border-2 border-primary w-1/3 p-2 '>Institutes</th>
+                            <th className='border-2 border-primary w-1/3 p-2'>Address</th>
+                            <th className='border-2 border-primary w-1/3 p-2'>Pan/Vat</th>
                         </tr>
-                        <tr className='border-2 border-gray-600 text-center'>
-                            <td className='border-2 border-gray-600 p-2'>Lorem ipsum</td>
-                            <td className='border-2 border-gray-600 p-2'>Butwal</td>
-                            <td className='border-2 border-gray-600 p-2'>123456789</td>
+                        <tr className='border-2 border-primary text-center'>
+                            <td className='border-2 border-primary p-2'>Lorem ipsum</td>
+                            <td className='border-2 border-primary p-2'>Butwal</td>
+                            <td className='border-2 border-primary p-2'>123456789</td>
                         </tr>
 
                     </table>

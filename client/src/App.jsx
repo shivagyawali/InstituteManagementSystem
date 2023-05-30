@@ -9,6 +9,7 @@ import Staffs from './components/Staffs'
 import AddInstitute from './components/AddInstitute'
 import Institute from './pages/institute/Institute'
 import AddCourse from './components/AddCourse'
+import AddStaff from './components/AddStaff'
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path={'/staffs'} element={<Staffs />} />
         <Route path={'/addinstitute'} element={<AddInstitute />} />
         <Route path={'/addcourse'} element={<AddCourse />} />
+        <Route path={'/addstaff'} element={<AddStaff />} />
       </Routes>
     </div>
   )
