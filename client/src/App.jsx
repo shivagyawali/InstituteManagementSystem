@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+
 import Login from './pages/auth/Login'
-import { Routes, Route,Navigate } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import Dashboard from './pages/institute/Dashboard'
 import Institute from './components/Institute'
 import Course from './components/Course'
@@ -9,7 +9,7 @@ import Students from './components/Students'
 import Staffs from './components/Staffs'
 
 const App = () => {
-  const currentUser= true
+ 
 
 
   return (
