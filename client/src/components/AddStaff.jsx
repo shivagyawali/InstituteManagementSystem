@@ -10,7 +10,7 @@ const AddStaff = () => {
                 <Sidebar />
             </div>
             <div className='w-full text-center '>
-                <Header headerText={`Staff's Information`} />
+                <Header headerText={`Add Staff`} />
 
                 <form className='flex flex-col items-center w-full py-20 text-left gap-10'>
                     <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
