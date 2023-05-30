@@ -26,8 +26,8 @@ const Course = () => {
                             <label htmlFor="description">DESCRIPTION </label>
                             <textarea name='description' type='text' className='input-section font-normal text-md text-gray-900' />
                         </div>
-                        </div>
-                        <button type='submit' className='bg-primary py-2 px-4 rounded-md hover:bg-dark' >Save</button>
+                    </div>
+                    <button type='submit' className='bg-primary py-2 px-4 rounded-md hover:bg-dark' >Save</button>
                 </form>
             </div>
         </div>
