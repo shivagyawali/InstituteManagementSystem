@@ -1,192 +1,55 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import Header from './layouts/Header'
+import { Link } from 'react-router-dom'
+import StdImg from '../assets/Exams-bro.svg'
 
 const Teachers = () => {
     return (
-        <div className='flex'>
+        <div>
             <div className='lg:w-1/5'>
                 <Sidebar />
             </div>
-            <div className='w-full text-center '>
-                <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky lg:relative top-0  lg:top-3  bg-primary p-3 lg:rounded-md text-center lg:inline-block'
-                >
-                    Teacher's Information
-                </p>
-                <form className='flex flex-col items-center w-full py-20 text-left gap-10'>
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="photo"
-                            >
-                                Photo:
-                            </label>
-                            <input
-                                id='photo'
-                                type='file'
-                                className='cursor-pointer font-normal text-sm text-gray-900 border-none focus:ring-0 focus:ring-none focus:border-none active:outline-none focus:outline-none active:ring-0 active:ring-none active:border-none'
-                            />
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="name"
-                            >
-                                NAME:
-                            </label>
-                            <input
-                                id='name'
-                                type='text'
-                                className='input-section font-normal text-md text-gray-900 w-full'
-                            />
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="phonenumber"
-                            >
-                                Phone Number:
-                            </label>
-                            <input
-                                id='phonenumber'
-                                type='number'
-                                className='input-section font-normal text-md text-gray-900 w-full'
-                            />
-                        </div>
-                    </div>
+            <div className='text-center lg:ml-32'>
+                <Header headerText={`Teacher's Information`} />
+                <div className='md:flex items-center justify-center flex-1 pt-28 gap-10 overflow-x-scroll md:overflow-x-hidden m-auto lg:ml-10' >
+                    <table className=' w-5/6 border-2 border-primary  ' >
+                        <tr className='border-2 border-primary text-center text-sm'>
+                            <th className='border-2 border-primary p-2'>Photo</th>
+                            <th className='border-2 border-primary p-2'>NAME</th>
+                            <th className='border-2 border-primary p-2'>Phone Number</th>
+                            <th className='border-2 border-primary p-2'>Gender</th>
+                            <th className='border-2 border-primary p-2'>Date of Birth</th>
+                            <th className='border-2 border-primary p-2'>Citizenship No</th>
+                            <th className='border-2 border-primary p-2'>Email</th>
+                            <th className='border-2 border-primary p-2'>Qualification</th>
+                            <th className='border-2 border-primary p-2'>Courses</th>
+                            <th className='border-2 border-primary p-2'> Salary</th>
+                        </tr>
+                        <tr className='border-2 border-primary text-center text-sm'>
+                            <td className='border-2 border-primary p-2'><img src={StdImg} className='border-2 border-primary rounded-full w-10 m-auto' /></td>
+                            <td className='border-2 border-primary p-2'>Hari Shrivastav</td>
+                            <td className='border-2 border-primary p-2'>980123456</td>
+                            <td className='border-2 border-primary p-2'>Male</td>
+                            <td className='border-2 border-primary p-2'>2005-10-22</td>
+                            <td className='border-2 border-primary p-2 '>123-456-789</td>
+                            <td className='border-2 border-primary p-2'>abc@gmail.com</td>
+                            <td className='border-2 border-primary p-2'>Bachelors Degree</td>
+                            <td className='border-2 border-primary p-2'>Science,Math</td>
+                            <td className='border-2 border-primary p-2'>Rs. 12345</td>
+                        </tr>
 
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full '>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label>Gender:</label>
-                            <div className='flex gap-3 w-full'>
-                                <div className='flex items-center gap-2 text-sm'>
-                                    <input
-                                        id='male'
-                                        type='radio'
-                                        value='male'
-                                        name='gender'
-                                        className='border-primary focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary text-primary w-3 h-3'
-                                    />
-                                    <label
-                                        htmlFor='male'
-                                    >
-                                        Male
-                                    </label>
-                                </div>
-                                <div className='flex items-center gap-2 text-sm'>
-                                    <input
-                                        id='female'
-                                        type='radio'
-                                        value='female'
-                                        name='gender'
-                                        className='border-primary focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary text-primary w-3 h-3' />
-                                    <label
-                                        htmlFor='female'
-                                    >
-                                        Female
-                                    </label>
-                                </div>
-                                <div className='flex items-center gap-2 text-sm'>
-                                    <input
-                                        id='others'
-                                        type='radio'
-                                        value='others'
-                                        name='gender'
-                                        className='border-primary focus:ring-1 focus:ring-primary focus:border-primary active:outline-none active:ring-1 active:ring-primary active:border-primary text-primary w-3 h-3' />
-                                    <label
-                                        htmlFor='others'
-                                    >
-                                        Others
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="dob"
-                            >
-                                Date of Birth:
-                            </label>
-                            <input
-                                id='dob'
-                                type='date'
-                                className='w-full input-section font-normal text-md text-gray-900'
-                            />
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="identity"
-                            >
-                                Citizenship No.:
-                            </label>
-                            <input
-                                id='identity'
-                                type='number'
-                                className='w-full input-section font-normal text-md text-gray-900'
-                            />
-                        </div>
-                    </div>
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
-
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="email"
-                            >
-                                Email:
-                            </label>
-                            <input
-                                id='email'
-                                type='email'
-                                className='input-section font-normal text-md text-gray-900'
-                            />
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="qualification"
-                            >
-                                Qualifications:
-                            </label>
-                            <input
-                                id='qualification'
-                                type='text'
-                                className='input-section font-normal text-md text-gray-900'
-                            />
-                        </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="courses"
-                            >
-                                Courses:
-                            </label>
-                            <input
-                                id='courses'
-                                type='text'
-                                className='input-section font-normal text-md text-gray-900'
-                            />
-                        </div>
-                    </div>
-                    <div className='flex md:flex-row flex-col lg:justify-betweengap-10 lg:gap-10 md:gap-5 px-10 w-full'>
-
-                        <div className='flex flex-col gap-2 md:w-1/3'>
-                            <label
-                                htmlFor="salary"
-                            >
-                                Salary:
-                            </label>
-                            <input
-                                id='salary'
-                                type='number'
-                                className='input-section font-normal text-md text-gray-900 w-full'
-                            />
-                        </div>
-                    </div>
-
+                    </table>
+                </div>
+                <Link
+                    to={'/addteacher'}>
                     <button
-                        type='submit'
-                        className='bg-primary py-2 px-4 rounded-md hover:bg-dark'
+                        className='bg-primary py-2 px-4 rounded-md hover:bg-dark mt-20'
                     >
-                        Save
+                        Add
                     </button>
-                </form>
+                </Link>
             </div>
-
         </div>
     )
 }

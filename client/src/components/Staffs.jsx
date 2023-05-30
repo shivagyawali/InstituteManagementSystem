@@ -31,7 +31,7 @@ const Staffs = () => {
                             <td className='border-2 border-primary p-2'>980123456</td>
                             <td className='border-2 border-primary p-2'>Male</td>
                             <td className='border-2 border-primary p-2'>2005-10-22</td>
-                            <td className='border-2 border-primary p-2'>123-456-789</td>
+                            <td className='border-2 border-primary p-2 '>123-456-789</td>
                             <td className='border-2 border-primary p-2'>abc@gmail.com</td>
                             <td className='border-2 border-primary p-2'>Receptionist</td>
                             <td className='border-2 border-primary p-2'>Rs. 12345</td>
