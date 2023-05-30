@@ -10,7 +10,7 @@ const Course = () => {
             <div className='w-full text-center'>
                 <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky lg:relative top-0  lg:top-3  bg-primary p-3 lg:rounded-md text-center lg:inline-block'
                 >
-                    Student's Information
+                    Course's Information
                 </p>
                 <form className='flex flex-col items-center w-full py-20 text-left gap-10 ' >
                     <div className='flex flex-col justify-center lg:items-center gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
