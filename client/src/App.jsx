@@ -1,27 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Login from './pages/auth/Login'
-import { Routes, Route,Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/institute/Dashboard'
-import Institute from './components/Institute'
 import Course from './components/Course'
 import Teachers from './components/Teachers'
 import Students from './components/Students'
 import Staffs from './components/Staffs'
+import AddInstitute from './components/AddInstitute'
+import Institute from './pages/institute/Institute'
+import AddCourse from './components/AddCourse'
 
 const App = () => {
-  const currentUser= true
-
 
   return (
     <div>
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/login' element={<Login />} />
-        <Route path={'/institute'} element={<Institute />} />
+        <Route path='/institute' element={<Institute />} />
         <Route path={'/course'} element={<Course />} />
         <Route path={'/teachers'} element={<Teachers />} />
         <Route path={'/students'} element={<Students />} />
         <Route path={'/staffs'} element={<Staffs />} />
+        <Route path={'/addinstitute'} element={<AddInstitute />} />
+        <Route path={'/addcourse'} element={<AddCourse />} />
       </Routes>
     </div>
   )

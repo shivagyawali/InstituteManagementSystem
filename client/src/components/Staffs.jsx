@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import Header from './layouts/Header'
 
 const Staffs = () => {
     return (
@@ -8,10 +9,8 @@ const Staffs = () => {
                 <Sidebar />
             </div>
             <div className='w-full text-center '>
-                <p className='lg:text-3xl md:text-2xl sm:text-xl text-lg mb-5 sticky lg:relative top-0  lg:top-3  bg-primary p-3 lg:rounded-md text-center lg:inline-block'
-                >
-                    Staff's Information
-                </p>
+            <Header headerText= {`Staff's Information`}/>
+
                 <form className='flex flex-col items-center w-full py-20 text-left gap-10'>
                     <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
                         <div className='flex flex-col gap-2 md:w-1/3'>
