@@ -40,7 +40,7 @@ const studentCtrl = {
         qualification,
         email,
         dob,
-        courseId,
+        courseIds,
       } = req.body;
 
       if (
@@ -49,13 +49,15 @@ const studentCtrl = {
         !phone ||
         !batch ||
         !address ||
-        !courseId ||
+        !courseIds ||
         !dob
       )
         return res.status(400).json({ msg: "All fields are required" });
+
       const student = await prisma.student.findFirst({
         where: { name: name, phone: phone },
       });
+
       if (student) {
         return res.status(400).json({ msg: "This student already exists." });
       }
@@ -71,6 +73,7 @@ const studentCtrl = {
       } else {
         return res.status(400).json({ msg: "Photo Field is required" });
       }
+
       if (req.files && req.files.nagrita) {
         var nagrita = req.files.nagrita;
         var nagrita_name = Date.now() + nagrita.name.split(" ").join("_");
@@ -100,17 +103,20 @@ const studentCtrl = {
           nagrita: nagrita_name,
           dob: new Date(dob),
           courses: {
-            connect: { id: courseId },
+            connect: courseIds.map((courseId) => ({ id: courseId })),
           },
         },
       });
+
       res.json({
         msg: `${newData.name} is added!`,
       });
     } catch (err) {
+      console.log(err);
       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
+
   update: async (req, res) => {
     try {
       const { id } = req.params;
@@ -128,9 +134,14 @@ const studentCtrl = {
 
       if (!name || !gender || !phone || !batch || !address || !courseId || !dob)
         return res.status(400).json({ msg: "All fields are required" });
-      const student = await prisma.student.findFirst({
-        where: { id: id },
+
+      const student = await prisma.student.findUnique({
+        where: { id: parseInt(id) },
       });
+
+      if (!student) {
+        return res.status(404).json({ msg: "Student not found" });
+      }
 
       const photoPath = "./uploads/students/photo/" + student.photo;
       const nagritaPath = "./uploads/students/nagrita/" + student.nagrita;
@@ -149,8 +160,9 @@ const studentCtrl = {
           }
         });
       } else {
-        return res.status(400).json({ msg: "Photo Field is required" });
+        photo_name = student.photo;
       }
+
       if (req.files && req.files.nagrita) {
         var nagrita = req.files.nagrita;
         var nagrita_name = Date.now() + nagrita.name.split(" ").join("_");
@@ -166,11 +178,11 @@ const studentCtrl = {
           }
         );
       } else {
-        return res.status(400).json({ msg: "Nagrita Field is required" });
+        nagrita_name = student.nagrita;
       }
 
       const updatedStudent = await prisma.student.update({
-        where: { id: id },
+        where: { id: parseInt(id) },
         data: {
           name: name,
           gender: gender,
@@ -179,48 +191,90 @@ const studentCtrl = {
           address: address,
           qualification: qualification,
           email: email,
-          photo: photo_name ? photo_name : student.photo,
-          nagrita: nagrita_name ? nagrita_name : student.nagrita,
+          photo: photo_name,
+          nagrita: nagrita_name,
           dob: new Date(dob),
         },
       });
-      res.json({
-        mg: "Student Updated",
-        data: updatedStudent,
-      });
-    } catch (err) {
-      console.log(err);
-      return res.status(500).json({ msg: "Something Went wrong" });
-    }
-  },
-  delete: async (req, res) => {
-    try {
-      const { id } = req.params;
-      const student = await prisma.student.findFirst({
-        where: { id: id },
-      });
-      const fileExists = async (path) =>
-        !!(await fs.promises.stat(path).catch((e) => false));
 
-      const photoPath = "./uploads/students/photo/" + student.photo;
-      const nagritaPath = "./uploads/students/nagrita/" + student.nagrita;
-      if (await fileExists(photoPath)) {
-        fs.unlinkSync(photoPath);
-      }
-      if (await fileExists(nagritaPath)) {
-        fs.unlinkSync(nagritaPath);
-      }
-      const deleteStudent = await prisma.student.delete({
-        where: { id: id },
-      });
       res.json({
-        msg: `${deleteStudent.name} is deleted !!`,
+        msg: "Student Updated",
+        data: updatedStudent,
       });
     } catch (err) {
       console.log(err);
       return res.status(500).json({ msg: "Something went wrong" });
     }
   },
+
+  delete: async (req, res) => {
+    try {
+      const { id } = req.params;
+
+      // Find the student by ID
+      const student = await prisma.student.findUnique({
+        where: { id: id },
+        include: {
+          courses: {
+            include: {
+              students: true,
+            },
+          },
+          fees: true,
+        },
+      });
+
+      if (!student) {
+        return res.status(404).json({ msg: "Student not found" });
+      }
+
+      const fileExists = async (path) =>
+        !!(await fs.promises.stat(path).catch((e) => false));
+
+      const photoPath = "./uploads/students/photo/" + student.photo;
+      const nagritaPath = "./uploads/students/nagrita/" + student.nagrita;
+
+      // Delete the student's photo file
+      if (await fileExists(photoPath)) {
+        fs.unlinkSync(photoPath);
+      }
+
+      // Delete the student's nagrita file
+      if (await fileExists(nagritaPath)) {
+        fs.unlinkSync(nagritaPath);
+      }
+
+      // Delete the student's associated courses and remove the student from CourseToStudent
+      for (const course of student.courses) {
+        await prisma.course.update({
+          where: { id: course.id },
+          data: {
+            students: {
+              disconnect: { id: student.id },
+            },
+          },
+        });
+      }
+
+      // Delete the student's fees
+      await prisma.fee.deleteMany({
+        where: { studentId: student.id },
+      });
+
+      // Delete the student
+      const deleteStudent = await prisma.student.delete({
+        where: { id: student.id },
+      });
+
+      res.json({
+        msg: `${deleteStudent.name} and their associated courses and fees are deleted!`,
+      });
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json({ msg: "Something went wrong" });
+    }
+  },
+
   deleteCoursesOfStudent: async (req, res) => {
     try {
       const { id, courseId } = req.params;
