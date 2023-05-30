@@ -107,7 +107,7 @@ const Students = () => {
                             <input
                                 id='dob'
                                 type='date'
-                                className='input-section font-normal text-md text-gray-900'
+                                className='input-section font-normal text-md text-gray-900 w-full'
                             />
                         </div>
                         <div className='flex flex-col gap-2 md:w-1/3'>
