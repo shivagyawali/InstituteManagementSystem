@@ -5,10 +5,7 @@ import Header from './layouts/Header'
 
 const AddCourse = () => {
     return (
-        <div>
-            <div className='lg:w-1/5'>
-                <Sidebar />
-            </div>
+       
             <div className='w-full text-center'>
                 <Header headerText={`Add Course`} />
 
@@ -43,7 +40,6 @@ const AddCourse = () => {
                     </div>
                 </form>
             </div>
-        </div>
 
     )
 }

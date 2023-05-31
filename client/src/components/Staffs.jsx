@@ -6,10 +6,7 @@ import StdImg from '../assets/Exams-bro.svg'
 
 const Staffs = () => {
     return (
-        <div>
-            <div className='lg:w-1/5'>
-                <Sidebar />
-            </div>
+       
             <div className='text-center lg:ml-32'>
                 <Header headerText={`Staff's Information`} />
                 <div className='md:flex items-center justify-center flex-1 pt-28 gap-10 overflow-x-scroll md:overflow-x-hidden m-auto lg:ml-10' >
@@ -48,7 +45,6 @@ const Staffs = () => {
                     </button>
                 </Link>
             </div>
-        </div>
     )
 }
 

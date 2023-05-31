@@ -1,14 +1,9 @@
 import React from 'react'
-import Sidebar from './Sidebar'
 import Header from './layouts/Header'
 import { Link } from 'react-router-dom'
 
 const AddStaff = () => {
     return (
-        <div className='flex'>
-            <div className='lg:w-1/5'>
-                <Sidebar />
-            </div>
             <div className='w-full text-center '>
                 <Header headerText={`Add Staff`} />
 
@@ -183,7 +178,6 @@ const AddStaff = () => {
                 </form>
             </div>
 
-        </div>
     )
 }
 

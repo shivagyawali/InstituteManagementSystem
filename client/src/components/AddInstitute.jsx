@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom'
 
 const AddInstitute = () => {
   return (
-    <div>
-      <div className='lg:w-1/5'>
-        <Sidebar />
-      </div>
       <div className='w-full text-center'>
         <Header
           headerText={`Add Institute`}
@@ -72,7 +68,6 @@ const AddInstitute = () => {
           </div>
         </form>
       </div>
-    </div>
   )
 }
 

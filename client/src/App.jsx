@@ -12,6 +12,8 @@ import AddCourse from './components/AddCourse'
 import AddStaff from './components/AddStaff'
 import AddTeacher from './components/AddTeacher'
 import AddStudent from './components/AddStudent'
+import Profile from './components/Profile'
+import Settings from './components/Settings'
 
 const App = () => {
 
@@ -20,6 +22,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/settings' element={<Settings />} />
         <Route path='/institute' element={<Institute />} />
         <Route path={'/course'} element={<Course />} />
         <Route path={'/teachers'} element={<Teachers />} />

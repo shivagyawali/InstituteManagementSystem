@@ -1,18 +1,13 @@
 import React from 'react'
-import Sidebar from './Sidebar'
 import Header from './layouts/Header'
 import { Link } from 'react-router-dom'
 
 const AddTeacher = () => {
     return (
-        <div className='flex'>
-            <div className='lg:w-1/5'>
-                <Sidebar />
-            </div>
-            <div className='w-full text-center '>
+            <div className='text-center '>
                 <Header headerText="Add Teacher"/>
-                <form className='flex flex-col items-center w-full py-20 text-left gap-10'>
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
+                <form className='flex flex-col items-center lg:w-4/6 lg:m-auto py-20 text-left gap-10'>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 lg:px-0 w-full'>
                         <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
                                 htmlFor="photo"
@@ -34,10 +29,10 @@ const AddTeacher = () => {
                             <input
                                 id='name'
                                 type='text'
-                                className='input-section font-normal text-md text-gray-900 w-full'
+                                className='input-section font-normal text-md text-gray-900 '
                             />
                         </div>
-                        <div className='flex flex-col gap-2 md:w-1/3'>
+                        <div className='flex flex-col gap-2 lg:w-1/3'>
                             <label
                                 htmlFor="phonenumber"
                             >
@@ -46,12 +41,12 @@ const AddTeacher = () => {
                             <input
                                 id='phonenumber'
                                 type='number'
-                                className='input-section font-normal text-md text-gray-900 w-full'
+                                className='input-section font-normal text-md text-gray-900'
                             />
                         </div>
                     </div>
 
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full '>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 lg:px-0  w-full '>
                         <div className='flex flex-col gap-2 md:w-1/3'>
                             <label>Gender:</label>
                             <div className='flex gap-3 w-full'>
@@ -106,7 +101,7 @@ const AddTeacher = () => {
                             <input
                                 id='dob'
                                 type='date'
-                                className='w-full input-section font-normal text-md text-gray-900'
+                                className='input-section font-normal text-md text-gray-900'
                             />
                         </div>
                         <div className='flex flex-col gap-2 md:w-1/3'>
@@ -118,11 +113,11 @@ const AddTeacher = () => {
                             <input
                                 id='identity'
                                 type='number'
-                                className='w-full input-section font-normal text-md text-gray-900'
+                                className=' input-section font-normal text-md text-gray-900'
                             />
                         </div>
                     </div>
-                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 w-full'>
+                    <div className='flex md:flex-row flex-col md:justify-between gap-10 lg:gap-10 md:gap-5 px-10 lg:px-0  w-full'>
 
                         <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
@@ -161,7 +156,7 @@ const AddTeacher = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex md:flex-row flex-col lg:justify-betweengap-10 lg:gap-10 md:gap-5 px-10 w-full'>
+                    <div className='flex md:flex-row flex-col lg:justify-betweengap-10 lg:gap-10 md:gap-5 px-10 lg:px-0  w-full'>
 
                         <div className='flex flex-col gap-2 md:w-1/3'>
                             <label
@@ -194,7 +189,6 @@ const AddTeacher = () => {
                 </form>
             </div>
 
-        </div>
     )
 }
 

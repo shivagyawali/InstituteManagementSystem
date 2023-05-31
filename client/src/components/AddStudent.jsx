@@ -5,10 +5,6 @@ import Header from './layouts/Header'
 
 const AddStudent = () => {
     return (
-        <div className='flex'>
-            <div className='lg:w-1/5'>
-                <Sidebar />
-            </div>
             <div className='w-full text-center'>
                 <Header headerText="Add Student"/>
                 <form className='flex flex-col items-center w-full py-20 text-left gap-10 ' >
@@ -203,7 +199,6 @@ const AddStudent = () => {
 
                 </form>
             </div>
-        </div>
     )
 }
 
