@@ -82,10 +82,11 @@ const Sidebar = () => {
                 <BiUserCircle className="w-4 h-4 " />
                 Profile
               </li></Link>
-              <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
+              <Link to="/settings"> <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
                 <FiSettings className="w-4 h-4 " />
                 Settings
               </li>
+              </Link>
               <Link to="/login">
                 <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
                   {" "}
