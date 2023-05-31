@@ -52,7 +52,7 @@ model Course {
   institute   Institute @relation(fields: [instituteId], references: [id])
   instituteId String
   teachers    Teacher[]
-  students    Student[]
+  students    Student[] @relation("CourseStudent")
 }
 
 model Teacher {
@@ -106,7 +106,7 @@ model Student {
   institute     Institute @relation(fields: [instituteId], references: [id])
   instituteId   String
   fees          Fee[]
-  courses       Course[]
+  courses       Course[]  @relation("CourseStudent")
 }
 
 model Fee {

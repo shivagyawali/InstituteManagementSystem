@@ -57,35 +57,36 @@ const Sidebar = () => {
         <div>
           <div
             onClick={() => setMenuPop(true)}
-            className={` w-10 h-10 text-2xl font-bold flex items-center justify-center  bg-dark rounded-full shadow-md shadow-gray-600 cursor-pointer hover:w-11 hover:h-11 hover:text-3xl fixed bottom-10 transition-all ease-in duration-200 ${menuPop ? "hidden" : "block"
-              }`}
+            className={` w-10 h-10 text-2xl font-bold flex items-center justify-center  bg-dark rounded-full shadow-md shadow-gray-600 cursor-pointer hover:w-11 hover:h-11 hover:text-3xl fixed bottom-10 transition-all ease-in duration-200 ${
+              menuPop ? "hidden" : "block"
+            }`}
           >
-            <BiDotsHorizontalRounded />
+            <BiDotsHorizontalRounded onClick={() => setMenuPop(true)} />
           </div>
           <div
             onClick={() => setMenuPop(false)}
-            className={`z-10 w-10 h-10 text-2xl font-bold flex items-center justify-center  bg-dark rounded-full shadow-md shadow-gray-600 cursor-pointer hover:w-11 hover:h-11 hover:text-3xl fixed bottom-10 transition-all ease-in duration-200 ${menuPop ? "block" : "hidden"
-              }`}
+            className={`z-10 w-10 h-10 text-2xl font-bold flex items-center justify-center  bg-dark rounded-full shadow-md shadow-gray-600 cursor-pointer hover:w-11 hover:h-11 hover:text-3xl fixed bottom-10 transition-all ease-in duration-200 ${
+              menuPop ? "block" : "hidden"
+            }`}
           >
-            <GrFormClose />
+            <GrFormClose onClick={() => setMenuPop(false)} />
           </div>
 
           <div
-            className={` fixed bottom-14 left-10 bg-dark py-6 rounded-md text-lg transition-all ease-in-out duration-100 shadow-md shadow-gray-500  ${menuPop ? "opacity-1 " : "opacity-0"
-              }`}
+            className={` fixed bottom-14 left-10 bg-dark py-6 rounded-md text-lg transition-all ease-in-out duration-100 shadow-md shadow-gray-500  ${
+              menuPop ? "opacity-1 " : "opacity-0"
+            }`}
           >
             <ul>
               <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
-                {" "}
-                <BiUserCircle />
+                <BiUserCircle className="w-4 h-4 " />
                 Profile
               </li>
               <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
-                {" "}
-                <FiSettings />
+                <FiSettings className="w-4 h-4 " />
                 Settings
               </li>
-              <Link to='/login'>
+              <Link to="/login">
                 <li className="hover:bg-yellow-500 w-full px-8 cursor-pointer py-1 flex items-center gap-2">
                   {" "}
                   <AiOutlineLogout />
