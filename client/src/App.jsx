@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Login from './pages/auth/Login'
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/institute/Dashboard'
