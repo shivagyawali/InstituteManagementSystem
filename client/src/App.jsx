@@ -1,6 +1,6 @@
 
 import Login from './pages/auth/Login'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import Dashboard from './pages/institute/Dashboard'
 import Course from './components/Course'
 import Teachers from './components/Teachers'
@@ -14,9 +14,25 @@ import AddTeacher from './components/AddTeacher'
 import AddStudent from './components/AddStudent'
 import Profile from './components/Profile'
 import Settings from './components/Settings'
+import { useSelector } from 'react-redux'
+import { selectUserInfo } from './pages/auth/features/authSlice'
+import { useEffect } from 'react'
 
 const App = () => {
+const navigate = useNavigate();
+  
+ const userInfo = useSelector(selectUserInfo);
 
+ useEffect(() => {
+   if (userInfo) {
+    navigate("/")
+   }else{
+    navigate('/login')
+   }
+ 
+   
+ }, [userInfo])
+ 
   return (
     <div>
       <Routes>
