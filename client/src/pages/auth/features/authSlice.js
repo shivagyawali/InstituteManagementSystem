@@ -40,11 +40,18 @@ const authSlice = createSlice({
       Cookies.set("token", token);
     },
     clearTokens: (state) => {
-      state.accessToken = null;
       state.token = null;
       state.success = false;
-      Cookies.remove("token");
-      toast.success(`You are logged out`);
+      Cookies.remove("token", { path: "" });
+      state.userInfo = null;
+      toast("You are logged out!", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     },
     setUserInfo: (state, action) => {
       state.userInfo = action.payload;
