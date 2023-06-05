@@ -4,6 +4,8 @@ const fileUpload = require("express-fileupload");
 const { PrismaClient } = require("@prisma/client");
 const cors = require("cors");
 const prisma = new PrismaClient();
+require('dotenv').config();
+
 
 const app = express();
 const port = 5000;
