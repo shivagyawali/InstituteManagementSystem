@@ -63,7 +63,7 @@ const instituteSlice = createSlice({
       })
       .addCase(fetchInstitute.fulfilled, (state, action) => {
         state.status = STATUS.IDLE;
-        state.action = action.payload;
+        state.data = action.payload;
       })
       .addCase(fetchInstitute.rejected, (state) => {
         state.status = STATUS.ERROR;
@@ -76,7 +76,7 @@ const instituteSlice = createSlice({
       })
       .addCase(fetchAllInstitute.fulfilled, (state, action) => {
         state.status = STATUS.IDLE;
-        state.action = action.payload;
+        state.data = action.payload;
       })
       .addCase(fetchAllInstitute.rejected, (state) => {
         state.status = STATUS.ERROR;
@@ -89,7 +89,7 @@ const instituteSlice = createSlice({
       })
       .addCase(createInstitute.fulfilled, (state, action) => {
         state.status = STATUS.IDLE;
-        state.action.push(action.payload);
+        state.data.push(action.payload);
       })
       .addCase(createInstitute.rejected, (state) => {
         state.status = STATUS.ERROR;
@@ -101,7 +101,7 @@ const instituteSlice = createSlice({
       })
       .addCase(updateInstitute.fulfilled, (state, action) => {
         state.status = STATUS.IDLE;
-        state.action = action.payload;
+        state.data = action.payload;
       })
       .addCase(updateInstitute.rejected, (state) => {
         state.status = STATUS.ERROR;
