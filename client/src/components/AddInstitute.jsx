@@ -2,8 +2,11 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './layouts/Header'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 const AddInstitute = () => {
+  const dispatch = useDispatch();
+  
   return (
       <div className='w-full text-center'>
         <Header
