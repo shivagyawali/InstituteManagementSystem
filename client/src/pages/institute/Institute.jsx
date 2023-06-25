@@ -2,8 +2,10 @@ import React from 'react'
 import Sidebar from '../../components/Sidebar'
 import { Link } from 'react-router-dom'
 import Header from '../../components/layouts/Header'
+import {useDispatch} from 'react-redux'
 
 const Institute = () => {
+    const dispatch = useDispatch()
     return (
         <div>
             <div className='lg:w-1/5'>
